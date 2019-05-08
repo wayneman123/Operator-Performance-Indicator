@@ -1,0 +1,14 @@
+CREATE PROC spGetReportByDateAndLineNum
+@LineNum int
+@Date nvarchar
+as
+Begin
+	Select * from tblEOR 
+	Where Line# = @LineNum 
+	and Date = @Date
+	order by Date
+End 
+
+
+Execute:
+spGetReportByDateAndLineNum @Linenum = 1, @Date = '11/2/2016'
